@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <section className="container flex items-center justify-between m-auto h-[calc(100vh-112px)]">
-      <div>
+    <section className="container flex items-center justify-between mx-auto h-[calc(100vh-112px)]">
+      <div className="mb-12">
         <h1 className="text-6xl font-semibold text-slate-900 capitalize leading-normal">
           I design and develop
           <br /> experiences that makes
@@ -14,7 +14,7 @@ export const Hero = () => {
           <button className="text-white px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600">Works &#8594;</button>
         </div>
       </div>
-      <div>
+      <div className="mb-12">
         <Image src="/hero.svg" width="500px" height="300px" alt="hero image" />
       </div>
     </section>
