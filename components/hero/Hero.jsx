@@ -1,13 +1,16 @@
 import Image from "next/image";
+import { useGetMeQuery } from "../../redux/services/me";
+import { SkeletonText } from "../molecules/skeletonText";
 
 export const Hero = () => {
+  const { data, error, isLoading } = useGetMeQuery();
   return (
     <section className="container flex items-center justify-between mx-auto h-[calc(100vh-112px)]">
       <div className="mb-12">
-        <h1 className="text-6xl font-semibold text-slate-900 capitalize leading-normal">
-          I design and develop
-          <br /> experiences that makes
-          <br /> peoples live easier.
+        <h1 className="text-6xl font-semibold text-slate-900 capitalize leading-normal w-[25ch]">
+          {isLoading && <SkeletonText count={12} />}
+          {error && "something went wrong"}
+          {data && data.heroTitle}
         </h1>
         <div className="flex items-center gap-3 mt-8 text-xl">
           <p className="text-blue-500">Check Out My</p>
